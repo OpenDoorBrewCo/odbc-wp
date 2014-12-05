@@ -1,0 +1,271 @@
+﻿@font-face
+{
+    font-family: KGNexttoMeSolid;
+    src: url(./fonts/KGNexttoMeSolid.ttf);
+}
+@font-face
+{
+    font-family: Songbird;
+    src: url('./fonts/songbird.eot');
+    src: url('./fonts/songbird.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/songbird.woff') format('woff'),
+         url('./fonts/songbird.ttf') format('truetype');
+}
+body {
+    font-size:100%;
+    font-family: 'KGNexttoMeSolid','Arial Rounded MT';
+    text-shadow:2px 2px black;
+    color:white;
+    margin:0;
+    margin-bottom:90px;
+
+	background:url('./backgrounds/background_flatirons.jpg') no-repeat;
+    background-size:cover;	
+}
+
+input[type="button"]{
+    background-color:transparent;
+    border:none;
+}
+
+li{
+    list-style-type: none;
+    margin-bottom:5px;
+}
+
+.center{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.left{
+    text-align:left;
+    float:left;
+}
+
+.right {
+    text-align:right;
+    float:right;
+}
+
+.textLeft{
+    text-align:left;
+}
+
+.textRight{
+    text-align:right;
+}
+
+
+/*KG Fonts and Headings*/
+.fontKG{
+    font-family: KGNexttoMeSolid;
+}
+
+h1
+{
+    color:white;
+    font-size:3em;
+}
+
+h2{
+    color:white;
+    font-size:2em;
+    margin:0;
+    font-weight:normal;
+}
+
+h3{
+    font-weight:bold;
+}
+
+
+/*Songbird Fonts and Headings*/
+
+.fontSongbird{
+    font-family: Songbird;
+}
+
+h4{
+    font-size:10em;
+    font-weight:normal;
+    margin:0;
+}
+
+
+p{
+    font-size:1.1em;
+    font-weight:normal;
+    line-height:1.75em;
+    margin:0;
+    margin-bottom:20px;
+    z-index:10;
+}
+
+
+.button{
+    outline:none;
+}
+
+
+/*Header Area*/
+	header{
+		 background-color: rgba(255,255,255,0.5);
+	}
+	
+	.topNav{
+		width:60%;
+		font-family: Songbird;
+		font-weight:normal;
+		font-size:5em;
+		text-align:left;
+		padding-top:10px;
+		color:black;  
+	}
+	
+	#headerLinks{
+		vertical-align:top;
+		display:inline-block;
+		font-size:0.9em;
+		font-weight:lighter;
+		text-shadow:none;		
+	}
+	
+	#doorLogo
+	{
+		height:75px;
+	}
+	
+	.menu{
+		margin:0;
+		display:inline-block;
+	}
+	
+	.menu-main-nav-menu-container{
+		display:inline-block;
+	}
+	
+	nav li{
+	 display:inline-block;
+	}
+
+
+
+/* END Header Area */
+
+
+
+.moveUp{
+    position:relative;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.moveUp:hover{
+   top:-2px;
+
+}
+
+
+
+.rotateSubtle:hover{
+    transform: rotate(5deg);
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Safari and Chrome */
+}
+
+
+footer
+{
+    background-color:#252525;
+    position:fixed;
+    display:block;
+    bottom:0px;
+    opacity:0.75;
+}
+.content{
+    width:60%;
+}
+
+.twitterFooter{
+    margin-top:5px;
+    margin-bottom:5px;
+    transition: all 0.25s;
+    background:url('./buttons/twitterBird.png') no-repeat;
+    width:100px;
+    height:50px;
+    display:inline-block;
+}
+
+.fbFooter{
+    margin-top:5px;
+    margin-bottom:5px;
+    transition: all 0.25s;
+    background:url('./buttons/fbHand.png') no-repeat;
+    width:50px;
+    height:50px;
+    display:inline-block;
+}
+
+a{
+    color:white;
+}
+
+a:visited{
+    color:white;
+}
+
+.top-nav a
+{
+    color:black;
+
+}
+
+.top-nav a:visited
+{
+    color:black;
+
+}
+
+a, img
+{
+    border:none;
+    text-decoration:none;
+}
+
+.tableFixed{
+    table-layout:fixed;
+    width:100%;
+}
+
+.tdHalf{
+    width:50%;
+    display:table-cell;
+}
+
+.footerLeft {
+    text-align:left;
+}
+
+.footerRight{
+    text-align:right;
+}
+
+
+.shadow{
+    box-shadow:rgba(0,0,0,0.3) 7px 7px;
+}
+
+
+.accent-line{
+    border-top:solid white 2px;
+
+}
+
+input:focus {
+    outline: none; 
+}
+

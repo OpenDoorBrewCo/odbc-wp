@@ -1,0 +1,54 @@
+﻿body{
+    background-color:transparent;
+}
+
+.idContainer{
+    width:100%;
+    font-weight:normal;
+    color:white;
+}
+
+.idContainer>h1{ 
+    font-family:Songbird, 'Arial Rounded MT';
+    font-size:20em;
+    font-weight:lighter;
+    margin:0;
+}
+.idContainer>h2{ 
+    font-family:KGNexttoMeSolid;
+    font-size:3em;
+}
+
+.idButton{
+    width:7em;
+    height:12em;
+    margin:2em;
+    margin-left:3em;
+    margin-right:3em;
+    transition:all 0.75s ease-out;
+ }
+
+#idYes{
+    background:url('./buttons/btn_yes_beer.png') no-repeat;
+}
+
+#idNo{
+    background:url('./buttons/btn_no_beer.png') no-repeat;
+}
+
+#idNo:hover {
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Safari and Chrome */
+    cursor:pointer;
+}
+
+#idYes:hover {
+    transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Safari and Chrome */
+    cursor:pointer;
+}
+
+/*WordPress hack to get rid of extranneous <br> tags the WordPress adds */
+br {display:none;}
