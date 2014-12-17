@@ -1,0 +1,21 @@
+﻿body {
+   background:url('./backgrounds/background_flatirons.jpg') no-repeat;
+   background-size:cover;
+}
+
+#imgOdbcFamily{
+    width:300px;
+    border:17px white solid;
+    border-bottom:80px white solid;
+    z-index:-500;
+    background-color:tan;
+    /*opacity:0.85;*/
+    margin:20px;
+    margin-top:0;
+
+    box-shadow:rgba(0,0,0,0.2) 7px 7px;
+
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Safari and Chrome */
+}

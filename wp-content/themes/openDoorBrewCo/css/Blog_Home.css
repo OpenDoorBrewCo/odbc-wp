@@ -1,0 +1,108 @@
+﻿
+body {
+
+}
+
+/*h1, h2{
+    font-family:'KG Next to Me Sketched';
+}*/
+
+#blog-content{
+
+}
+
+h1{
+    font-size:3.5em;
+    padding-bottom:10px;
+    margin:25px 0px 10px 0px;
+
+}
+.post{
+  
+}
+
+.post-thumbnail{
+    width:235px;
+    height:175px;
+    float:left;
+    margin:0px 25px 10px 0px;
+}
+
+
+.meta{
+    font-size:small;
+
+    /*border-bottom:2px solid white;*/
+
+}
+
+.post-title{
+    background-color: rgba(255,255,255,0.5);
+    text-shadow:none;
+    padding:5px;   
+    
+}
+
+.post-title a{
+    color:black; 
+}
+
+.author-name{
+    padding-left:25px;
+    
+
+}
+
+.post-date
+{
+     
+
+}
+
+.continue{
+    font-family:'KG Next to Me Sketched';
+    color:white;
+    font-size:1.25em;
+}
+
+
+
+.continue:visited{
+	color:white;
+}
+
+.blog-navigation{
+	
+}
+
+.prev-posts{
+    margin:50px;
+
+}
+
+.next-posts{
+
+
+}
+
+.prev-posts a,.next-posts a{
+	color:white;
+    font-family:'KG Next to Me Sketched';
+}
+
+
+.prev-posts a:visited,.next-posts a:visited{
+	color:white;
+}
+
+.comment-meta a
+{
+    background-color:pink;
+    color:white;
+}
+
+
+
+
+
+
