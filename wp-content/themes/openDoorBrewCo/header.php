@@ -70,8 +70,7 @@
 	<div id="page-wrap">
         <header>
             <nav class="topNav center">
-                    <a href="index.php"><img id="doorLogo" alt="Home" title="Home" src="<?php bloginfo('template_url'); ?>/css/icons/door_logo.png" /></a>
-                    WWW
+                    <a href="<?php echo get_option('home'); ?>"/><img id="doorLogo" alt="Home" title="Home" src="<?php bloginfo('template_url'); ?>/css/icons/door_logo.png" /></a>
 					<div id="headerLinks">
 						<?php wp_nav_menu(array('menu' => 'Main Nav Menu')); ?>
                     </div>
