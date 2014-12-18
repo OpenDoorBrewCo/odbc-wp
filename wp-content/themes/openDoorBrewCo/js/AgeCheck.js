@@ -8,7 +8,7 @@
 
 
 function DisplayIdCheck() {
-    var src = "./?page_id=18";
+    var src = "./age-check";
     $.modal('<iframe src="' + src + '" height="760" width="830" style="border:2px">', {
         closeHTML: "",
         opacity: 60,
@@ -39,7 +39,7 @@ function DisplayIdCheck() {
                     dialog.overlay.slideUp('medium', function () {
                         $.modal.close();
                         var SetOfDrinkingAge = $.cookie("OfDrinkingAge");
-                        if (SetOfDrinkingAge == "no")
+                        if (SetOfDrinkingAge != "yes")
                         {
                             //Redirect to wholesome fun if not over 21
                             window.location.replace("https://www.google.com/#q=wholesome+family+fun");
