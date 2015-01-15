@@ -64,11 +64,11 @@ class Envato_Protected_API {
   public function __construct( $user_name = '', $api_key = '' ) {
   
     if ( $user_name == '' ) {
-      $this->set_error( 'user_name', __( 'Please enter your Envato Marketplace Username.', 'envato' ) );
+      $this->set_error( 'user_name', __( 'Please enter your Envato Marketplace Username.', 'envato-wordpress-toolkit' ) );
     }
       
     if ( $api_key == '' ) {
-      $this->set_error( 'api_key', __( 'Please enter your Envato Marketplace API Key.', 'envato' ) );
+      $this->set_error( 'api_key', __( 'Please enter your Envato Marketplace API Key.', 'envato-wordpress-toolkit' ) );
     }
       
     $this->user_name  = $user_name;
@@ -93,21 +93,29 @@ class Envato_Protected_API {
   public function private_user_data( $set = '', $user_name = '', $set_data = '', $allow_cache = false, $timeout = 300 ) { 
     
     if ( $set == '' ) {
-      $this->set_error( 'set', __( 'The API "set" is a required parameter.', 'envato' ) );
+      $this->set_error( 'set', __( 'The API "set" is a required parameter.', 'envato-wordpress-toolkit' ) );
     }
       
     if ( $user_name == '' ) {
       $user_name = $this->user_name;
     }
+    
+    if ( $user_name == '' ) {
+      $this->set_error( 'user_name', __( 'Please enter your Envato Marketplace Username.', 'envato-wordpress-toolkit' ) );
+    }
       
     if ( $set_data !== '' ) {
       $set_data = ":$set_data";
+    }
+    
+    if ( $errors = $this->api_errors() ) {
+      return $errors;
     }
       
     $url = "http://marketplace.envato.com/api/edge/$user_name/$this->api_key/$set$set_data.json";
     
     /* set transient ID for later */
-    $transient = $user_name . '_' . $set . $set_data;
+    $transient = substr( md5( $user_name . '_' . $set . $set_data ), 0, 16 );
     
     if ( $allow_cache ) {
       $cache_results = $this->set_cache( $transient, $url, $timeout );
@@ -145,8 +153,18 @@ class Envato_Protected_API {
    * @updated   1.3
    */
   public function wp_list_themes( $allow_cache = true, $timeout = 300 ) {
-  
-    return $this->private_user_data( 'wp-list-themes', $this->user_name, '', $allow_cache, $timeout );
+    
+    if ( $this->user_name == '' ) {
+      $this->set_error( 'user_name', __( 'Please enter your Envato Marketplace Username.', 'envato-wordpress-toolkit' ) );
+    }
+    
+    $themes = $this->private_user_data( 'wp-list-themes', $this->user_name, '', $allow_cache, $timeout );
+    
+    if ( $errors = $this->api_errors() ) {
+      return $errors;
+    }
+    
+    return $themes;
     
   }
   
@@ -164,7 +182,7 @@ class Envato_Protected_API {
   public function wp_download( $item_id ) {
     
     if ( ! isset( $item_id ) ) {
-      $this->set_error( 'item_id', __( 'The Envato Marketplace "item ID" is a required parameter.', 'envato' ) );
+      $this->set_error( 'item_id', __( 'The Envato Marketplace "item ID" is a required parameter.', 'envato-wordpress-toolkit' ) );
     }
       
     $download = $this->private_user_data( 'wp-download', $this->user_name, $item_id );
@@ -193,7 +211,7 @@ class Envato_Protected_API {
     $url = preg_replace( '/set/i', 'item:' . $item_id, $this->public_url );
     
     /* set transient ID for later */
-    $transient = 'item_' . $item_id;
+    $transient = substr( md5( 'item_' . $item_id ), 0, 16 );
       
     if ( $allow_cache ) {
       $cache_results = $this->set_cache( $transient, $url, $timeout );
@@ -338,8 +356,13 @@ class Envato_Protected_API {
     if ( empty( $url ) ) {
       return false;
     }
-
-    $request = wp_remote_request( $url );
+    
+    $args = array(
+      'headers'   => array( 'Accept-Encoding' => '' ), 
+      'sslverify' => false,
+      'timeout'   => 300
+    );
+    $request = wp_remote_request( $url, $args );
 
     if ( is_wp_error( $request ) ) {
     	echo $request->get_error_message();
