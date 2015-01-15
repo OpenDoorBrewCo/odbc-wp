@@ -33,6 +33,11 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** PHP Memory settings - check out http://codex.wordpress.org/Editing_wp-config.php#Increasing_memory_allocated_to_PHP */
+define( 'WP_MEMORY_LIMIT', '96M' );
+
+define( 'WP_MAX_MEMORY_LIMIT', '256M' );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
